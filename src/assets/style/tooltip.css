@@ -1,0 +1,137 @@
+.box__tooltip-bubble {
+  opacity: 1;
+  z-index: 2;
+  padding: 8px 16px 5px;
+  border: 1px solid #222;
+  border-radius: 6px;
+  background: #ffffff;
+  text-align: center;
+  white-space: nowrap;
+  transform: translate(-50%, 0);
+  position: absolute;
+}
+
+.box__tooltip-bubble::after {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 6px 4px 0px 4.5px;
+  border-color: #ffffff transparent;
+  display: block;
+  width: 0;
+  z-index: 1;
+  bottom: -5px;
+  left: 50%;
+  margin-left: -4.5px;
+}
+
+.box__tooltip-bubble::before {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 5px 4px 0px 4.5px;
+  border-color: black transparent;
+  display: block;
+  width: 0;
+  z-index: 0;
+  bottom: -5px;
+  left: 50%;
+  margin-left: -4.5px;
+}
+
+.tooltip {
+  opacity: 1;
+  width: 200px;
+  position: absolute;
+  transform: translate(-50%, 0);
+  background: #fff;
+  pointer-events: none;
+  position: relative;
+  background: #ffffff;
+  border-radius: 5px;
+  border: 1px solid black;
+  position: absolute;
+}
+
+.tooltip::after {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 6px 4px 0px 4.5px;
+  border-color: #ffffff transparent;
+  display: block;
+  width: 0;
+  z-index: 1;
+  bottom: -5px;
+  left: 50%;
+  margin-left: -4.5px;
+}
+
+.tooltip:before {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 5px 4px 0px 4.5px;
+  border-color: black transparent;
+  display: block;
+  width: 0;
+  z-index: 0;
+  bottom: -5px;
+  left: 50%;
+  margin-left: -4.5px;
+}
+
+.tooltip__title {
+  display: block;
+  font-size: 20px;
+  color: #757575;
+}
+
+.tooltip__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+  font-weight: bold;
+  font-family: sans-serif;
+  text-transform: uppercase;
+}
+
+.tooltip__Item {
+  display: flex;
+}
+
+.tooltip__graphTitle {
+  font-size: 12px;
+  color: #757575;
+  display: block;
+  text-align: left;
+  width: 80px;
+}
+
+.tooltip__graphValue {
+  display: block;
+  width: 71px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #424242;
+  text-align: right;
+  margin-left: auto;
+}
+
+.tooltip__triangle {
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  bottom: -11px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-top: 10px solid red;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+}
+
+.tooltip__graphValue--blue {
+  color: #067dfd;
+}

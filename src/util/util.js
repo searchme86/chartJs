@@ -98,3 +98,22 @@ export const createXYCoordinateSets = (dataArrayA, dataArrayB) => {
 
   return result;
 };
+
+export const createDiffArray = (a, b) => {
+  if (!Array.isArray(a) || !Array.isArray(b)) {
+    throw new Error('모든 인자의 값은 배열이어야 합니다.');
+  }
+
+  if (a.length !== b.length) {
+    throw new Error('모든 배열의 요소 갯수를 일치시켜주세요');
+  }
+
+  const c = [];
+  for (let i = 0; i < a.length; i++) {
+    const diff = Math.abs(a[i] - b[i]);
+    const roundedDiff = Math.floor(diff);
+    c.push(roundedDiff);
+  }
+
+  return c;
+};

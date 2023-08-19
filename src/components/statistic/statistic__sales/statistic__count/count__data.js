@@ -1,5 +1,8 @@
 import { chartType, chartColor } from '../../../../config/chartConfig.js';
-import { createXYCoordinateSets } from '../../../../util/util.js';
+import {
+  createXYCoordinateSets,
+  createDiffArray,
+} from '../../../../util/util.js';
 
 const countDataSets = {
   standardsData: [
@@ -11,9 +14,8 @@ const countDataSets = {
     '2022-10-25',
     '2022-10-26',
   ],
-  blueData: [3, 3, 6, 9, 12, 3, 9],
-  grayData: [6, 6, 6, 9, 12, 3, 9],
-  linearData: [1, 2, 3, 6, 9, 12, 6],
+  blueData: [2, 4, 10, 4, 12, 20, 10],
+  grayData: [10, 20, 2, 30, 25, 4, 2],
 };
 
 const { standardsData, blueData, grayData, linearData } = countDataSets;
@@ -22,7 +24,12 @@ const { chartTypeLine, chartTypeBar } = chartType;
 
 let barBlueCoordinate = createXYCoordinateSets(standardsData, blueData);
 let barGrayCoordinate = createXYCoordinateSets(standardsData, grayData);
-let linearDataCoordinate = createXYCoordinateSets(standardsData, linearData);
+
+const linearDiffDataSets = createDiffArray(grayData, blueData);
+let linearDataCoordinate = createXYCoordinateSets(
+  standardsData,
+  linearDiffDataSets
+);
 
 export const count__data = {
   labels: standardsData,
@@ -52,6 +59,8 @@ export const count__data = {
       data: linearDataCoordinate,
       backgroundColor: ['rgba(0, 0, 0, 0.2)'],
       borderColor: ['rgba(0, 0, 0, 1)'],
+      borderWidth: 1,
+      borderDash: [5, 5],
       borderWidth: 1,
     },
   ],

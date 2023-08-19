@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>type_verticalLine</title>
+    <link rel="stylesheet" href="../src/assets/style/common.css" />
+    <link rel="stylesheet" href="../src/assets/style/layout.css" />
+    <link rel="stylesheet" href="../src/assets/style/tooltip.css" />
+  </head>
+  <body>
+    <div class="chart-container">
+      <div style="margin:'">
+        <canvas id="count"></canvas>
+      </div>
+    </div>
+
+    <script src="../src/lib/chart.min.js"></script>
+    <script type="module">
+      import { statistic__count } from '../src/components/statistic/statistic__sales/statistic__count/count.js';
+
+      if (document.getElementById('count')) {
+        const count = (() => {
+          const count = new Chart(
+            document.getElementById('count'),
+            statistic__count
+          );
+        })();
+      }
+      //
+    </script>
+  </body>
+</html>

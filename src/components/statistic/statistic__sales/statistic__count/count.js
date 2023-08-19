@@ -1,6 +1,6 @@
 import { count__data } from './count__data.js';
 
-import { tooltipWithLinearGraph } from '../../../../plugins/newTooltip.js';
+import { tooltipWithLinearGraph } from '../../../../plugins/tooltip__lineBar.js';
 
 export const statistic__count = {
   type: 'bar',
@@ -22,7 +22,7 @@ export const statistic__count = {
     //
     plugins: {
       tooltip: {
-        enabled: true,
+        enabled: false,
         position: 'nearest',
         external: tooltipWithLinearGraph,
       },

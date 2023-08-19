@@ -21,7 +21,6 @@ export const externalTooltipHandler = (context) => {
     return;
   }
 
-  // 오직 차트의 갯수가 2개일 경우에만 실행되도록 함
   if (chart.data.datasets?.length >= 2 && tooltip._active?.length >= 2) {
     const {
       ctx,
@@ -56,22 +55,16 @@ export const externalTooltipHandler = (context) => {
       currentIndexHovered
     );
 
-    // "delete-me" 클래스를 가진 요소들을 모두 삭제함
     deleteElementsByClass('toolTip__title');
     deleteElementsByClass('offscreen');
-    // // // 자식 요소들을 모두 삭제함
     deleteAllChildElements(tooltipList);
 
-    // ==============add new children==============
-    //리스트 부분 추가
-    //마우스 호버한 특정 그래프 데이터에 해당하는 y축 데이터
     yAxisDataArrayHovered.forEach((eachYaxisData, i) => {
       const { label, y: yAxisValue, unit } = eachYaxisData;
 
       const tooltipLi = document.createElement('li');
       tooltipLi.classList.add('tooltip__Item');
 
-      //판매금액, 유입수
       const tooltipGraphTitle = document.createElement('strong');
       tooltipGraphTitle.classList.add('tooltip__graphTitle');
       const tooltipGraphTitleText = document.createTextNode(label);
@@ -89,7 +82,6 @@ export const externalTooltipHandler = (context) => {
       tooltipList.appendChild(tooltipLi);
     });
 
-    // 돔 추가
     const moreLi = document.createElement('li');
     moreLi.classList.add('tooltip__Item');
 
@@ -111,8 +103,6 @@ export const externalTooltipHandler = (context) => {
     moreLi.appendChild(tooltipContent);
     tooltipList.appendChild(moreLi);
 
-    //새롭게 내용을 추가함
-    //타이틀 부분 추가
     const tooltipStrong = document.createElement('strong');
     tooltipStrong.classList.add('offscreen');
     const tooltipTitle = document.createTextNode(
@@ -123,14 +113,12 @@ export const externalTooltipHandler = (context) => {
 
     tooltipContainer.style.opacity = 1;
 
-    // ==============positioning of the tooltip.==============
     tooltipContainer.style.left = tooltip.caretX + 'px';
     tooltipContainer.style.top = `${
       tooltip.dataPoints[0].element.y -
       tooltipContainer.getBoundingClientRect().height -
       16
     }px`;
-    //   =========================== caret ===========================
   } else {
     console.log('그래프가 1개만 존재합니다.');
   }

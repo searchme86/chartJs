@@ -65,7 +65,7 @@ export const tooltipWithLinearGraph = (context) => {
     let resulta = generateNewObj(
       chart.data.datasets[1].data,
       chart.data.datasets[1].label,
-      { unit: '건' }
+      { unit: '원' }
     );
 
     /**
@@ -142,7 +142,7 @@ export const tooltipWithLinearGraph = (context) => {
 
     const tooltipGraphTitle = document.createElement('strong');
     tooltipGraphTitle.classList.add('tooltip__graphTitle');
-    const tooltipGraphTitleText = document.createTextNode('유입당 판매율');
+    const tooltipGraphTitleText = document.createTextNode('취소율');
     tooltipGraphTitle.appendChild(tooltipGraphTitleText);
 
     const tooltipContent = document.createElement('span');

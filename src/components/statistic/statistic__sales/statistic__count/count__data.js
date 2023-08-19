@@ -29,7 +29,7 @@ export const count__data = {
   datasets: [
     {
       order: 1,
-      label: 'redSales',
+      label: '판매금액',
       ...chartTypeBar,
       data: barBlueCoordinate,
       backgroundColor: ['rgba(255, 26, 104, 0.2)'],
@@ -38,7 +38,7 @@ export const count__data = {
     },
     {
       order: 1,
-      label: 'Blue Sales',
+      label: '취소금액',
       ...chartTypeBar,
       data: barGrayCoordinate,
       backgroundColor: ['rgba(54, 162, 235, 0.2)'],
@@ -47,7 +47,7 @@ export const count__data = {
     },
     {
       order: 0,
-      label: 'Line',
+      label: '취소율',
       ...chartTypeLine,
       data: linearDataCoordinate,
       backgroundColor: ['rgba(0, 0, 0, 0.2)'],
